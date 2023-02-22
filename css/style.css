@@ -59,7 +59,7 @@ main {
 .main-content {
     width: calc(100% - 230px);
     height: 100%;
-    background-color: var(--dark-primary);
+    background-color: var(--bg-main);
 }
 
 #call-to-action {
@@ -68,7 +68,7 @@ main {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: rgba (0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: flex-end;
     align-items: center;
