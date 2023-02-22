@@ -7,7 +7,7 @@
 --light-primary: #ffffff;
 --bg-main: #141922;
 --bg-playbar: #282828;
---dark-text: #C1C1C1;
+--dark-text: #a1a3aa;
 --contrast: #ADFF2F;
 
 }
@@ -20,6 +20,21 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    color: var(--light-primary);
+}
+
+img {
+    max-width: 100%;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 a {
@@ -63,6 +78,7 @@ main {
     width: calc(100% - 230px);
     height: 100%;
     background-color: var(--bg-main);
+    overflow-y: auto;
 }
 
 #call-to-action {
@@ -77,6 +93,27 @@ main {
     align-items: center;
 }
 
+section {
+    margin: 3rem 0
+}
+
+.row {
+    margin: 0 -15px;
+    display: flex;
+}
+
+.col {
+    width: calc(100% / 6);
+    padding: 15px;
+}
+
+.card {
+    text-align: center;
+} 
+
+.avatar-art img {
+    border-radius: 50%;
+}
 
 /*********************
     SECTION
@@ -98,7 +135,7 @@ main {
 
 .main-section {
     margin-top: 80px;
-    padding: 15px;
+    padding: 30px;
 }
 /* Main Nav */
 .main-nav ul {
@@ -114,3 +151,14 @@ main {
 }
 
 /* Section */
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    font-weight: 600;
+}
+
+h2 ~ .subtitle {
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
