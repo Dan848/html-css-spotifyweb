@@ -1,7 +1,6 @@
 /*********************
     GENERAL
 **********************/
-
 :root {
     /* Color styles */
 --dark-primary: #000000;
@@ -26,6 +25,10 @@ body {
 a {
     color: var(--dark-text);
     text-decoration: none;
+}
+
+ul {
+    list-style: none;
 }
 
 /*********************
@@ -80,7 +83,6 @@ main {
 **********************/
 
 /* CALL TO ACTION */
-
 .btn-up {
     display: inline-block;
     border: 1px solid var(--light-primary);
@@ -91,3 +93,24 @@ main {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+/* MAIN SECTION */
+
+.main-section {
+    margin-top: 80px;
+    padding: 15px;
+}
+/* Main Nav */
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-nav ul li a {
+    font-weight: 600;
+    padding: 15px;
+    text-transform: uppercase;
+}
+
+/* Section */
