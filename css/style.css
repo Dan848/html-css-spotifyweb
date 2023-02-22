@@ -1,5 +1,93 @@
+/*********************
+    GENERAL
+**********************/
+
+:root {
+    /* Color styles */
+--dark-primary: #000000;
+--light-primary: #ffffff;
+--bg-main: #141922;
+--bg-playbar: #282828;
+--dark-text: #C1C1C1;
+--contrast: #ADFF2F;
+
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color: var(--dark-text);
+    text-decoration: none;
+}
+
+/*********************
+    LAYOUT
+**********************/
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+#playbar {
+    width: 100%;
+    height: 90px;
+    background-color: var(--bg-playbar);
+}
+
+main {
+    width: 100%;
+    height: calc(100% - 90px);
+    display: flex;
+    overflow: hidden;
+}
+
+.aside-nav {
+    width: 230px;
+    min-height: 480px;
+    background-color: var(--dark-primary);
+}
+
+.main-content {
+    width: calc(100% - 230px);
+    height: 100%;
+    background-color: var(--dark-primary);
+}
+
+#call-to-action {
+    width: calc(100% - 230px);
+    height: 80px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba (0, 0, 0, 0.5);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+/*********************
+    SECTION
+**********************/
+
+/* CALL TO ACTION */
+
+.btn-up {
+    display: inline-block;
+    border: 1px solid var(--light-primary);
+    border-radius: 30px;
+    color: var(--light-primary);
+    padding: 15px 40px;
+    margin-right: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
 }
