@@ -42,6 +42,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: var(--light-primary);
+}
+
 ul {
     list-style: none;
 }
@@ -110,6 +114,7 @@ main {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    z-index: 999;
 }
 
 section {
@@ -132,8 +137,9 @@ section {
     cursor: pointer;
 } 
 
-.avatar img {
+.avatar {
     border-radius: 50%;
+    overflow: hidden;
 }
 
 /*********************
@@ -151,6 +157,12 @@ section {
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
+    scale: 0.8;
+    transition: 0.5s;
+}
+
+.btn-up:hover {
+    scale: 1
 }
 
 /* MAIN SECTION */
@@ -167,9 +179,10 @@ section {
     align-items: center;
 }
 
-.main-nav ul li {
-    padding: 15px
+.main-nav ul li{
+    padding: 15px;
 }
+
 
 .main-nav ul li a {
     font-size: 0.9rem;
@@ -178,8 +191,32 @@ section {
     text-transform: uppercase;
 }
 
-/* Section */
+.main-nav ul li a::after{
+    width: 40%;
+    margin: 5px auto;
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: var(--contrast);
+    opacity: 0;
+    transition: 0.2s;
+}
 
+.main-nav ul li:first-child a::after{
+    width: 40%;
+    margin: 5px auto;
+    display: block;
+    content: "";
+    height: 2px;
+    background-color: var(--contrast);
+    opacity: 1;
+}
+
+.main-nav a:hover::after{
+    opacity: 1;
+}
+
+/* Section */
 .subtitle {
     font-size: 0.9rem;
     color: var(--dark-text);
@@ -191,15 +228,56 @@ h2 ~ .subtitle {
     margin-bottom: 15px;
 }
 
+section .cover, section .avatar{
+    position: relative;
+}
+
+section .cover:after, section .avatar:after {
+font-family: 'Font Awesome 6 Free' ;
+font-size: 3rem;
+content: "\f144" ;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0.5);
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: 0.5s;
+}
+
+.card:hover .cover:after, .card:hover .avatar:after {
+    opacity: 1;
+}
+
 /* ASIDE NAV */
 .aside-nav a{
     font-size: 0.8rem;
 }
+.aside-top {
+    width: 100%;
+    height: 80%;
+}
 
+.aside-bottom {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: flex-end;
+}
 .logo {
     width: 65%;
     padding: 15px;
     margin-bottom: 15px;
+}
+
+.aside-nav li:hover .ico {
+    filter: opacity(1);
+    color: var(--light-primary);
+
 }
 /* Menu */
 .aside-menu li{
@@ -258,7 +336,8 @@ h2 ~ .subtitle {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-left: 15px;
+    padding: 0 15px;
+    width: 100%;
 }
 
 .profile-box .flex-start {
@@ -272,16 +351,14 @@ h2 ~ .subtitle {
 }
 
 hr {
+    width: 100%;
     opacity: 0.5;
-    margin-right: 15px;
 }
 
 .profile-box .ico.avatar {
     width: 30px;
     height: 30px;
     background-color: #808080;
-    border-radius: 50%;
-    overflow: hidden;
 }
 
 .profile-box .text-menu {
@@ -346,13 +423,19 @@ hr {
     MEDIA QUERY
 **********************/
 
-@media screen and ( max-width: 992px) {
+@media screen and (max-width: 1200px) {
     .col {
         width: calc(100% / 4);
     }
 }
 
-@media screen and ( max-width: 768px) {
+@media screen and (max-width: 992px) {
+    .col {
+        width: calc(100% / 3);
+    }
+}
+
+@media screen and (max-width: 768px) {
     .col {
         width: calc(100% / 2);
     }
