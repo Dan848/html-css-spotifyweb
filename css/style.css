@@ -7,7 +7,7 @@
 --light-primary: #ffffff;
 --bg-main: #141922;
 --bg-playbar: #282828;
---dark-text: #a1a3aa;
+--dark-text: #797979;
 --contrast: #ADFF2F;
 
 }
@@ -46,6 +46,21 @@ ul {
     list-style: none;
 }
 
+.flex-start {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
 /*********************
     LAYOUT
 **********************/
@@ -59,6 +74,7 @@ ul {
     width: 100%;
     height: 90px;
     background-color: var(--bg-playbar);
+    overflow: hidden;
 }
 
 main {
@@ -72,6 +88,9 @@ main {
     width: 230px;
     min-height: 480px;
     background-color: var(--dark-primary);
+    font-size: 0.9rem;
+    color: var(--dark-text);
+    font-weight: 700;
 }
 
 .main-content {
@@ -98,20 +117,22 @@ section {
 }
 
 .row {
-    margin: 0 -15px;
+    margin: 0 -5px;
     display: flex;
+    flex-flow: row wrap;
 }
 
 .col {
     width: calc(100% / 6);
-    padding: 15px;
+    padding: 5px;
 }
 
 .card {
     text-align: center;
+    cursor: pointer;
 } 
 
-.avatar-art img {
+.avatar img {
     border-radius: 50%;
 }
 
@@ -128,25 +149,32 @@ section {
     padding: 15px 40px;
     margin-right: 1.5rem;
     font-weight: 600;
+    font-size: 0.9rem;
     text-transform: uppercase;
 }
 
 /* MAIN SECTION */
 
 .main-section {
-    margin-top: 80px;
+    margin-top: 60px;
     padding: 30px;
 }
 /* Main Nav */
 .main-nav ul {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
 }
 
+.main-nav ul li {
+    padding: 15px
+}
+
 .main-nav ul li a {
-    font-weight: 600;
-    padding: 15px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 15px 5px;
     text-transform: uppercase;
 }
 
@@ -155,10 +183,177 @@ section {
 .subtitle {
     font-size: 0.9rem;
     color: var(--dark-text);
-    font-weight: 600;
+    font-weight: 700;
 }
 
 h2 ~ .subtitle {
     margin-top: -5px;
     margin-bottom: 15px;
+}
+
+/* ASIDE NAV */
+.aside-nav a{
+    font-size: 0.8rem;
+}
+
+.logo {
+    width: 65%;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+/* Menu */
+.aside-menu li{
+    padding: 5px 15px;
+}
+
+.aside-menu li:first-child {
+    border-left: 3px solid var(--contrast) ;
+}
+
+.aside-menu li:first-child .ico {
+    filter: opacity(1) !important;
+}
+
+.aside-menu li:first-child a {
+    color: var(--light-primary);
+}
+
+.aside-menu li .ico {
+    height: 30px;
+    width: 30px;
+    filter: opacity(0.5);
+}
+
+.aside-menu .text-menu {
+    padding: 5px;
+}
+
+/* Playlist */
+.aside-menu~h3 { 
+    color: var(--light-primary) !important;
+    padding: 15px 15px 0 15px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.playlist-ul li{
+    padding: 10px 15px;
+}
+
+.playlist-ul li:first-child{
+    padding: 0 15px;
+}
+
+.playlist-ul li:first-child a{
+    font-size: 1rem;
+}
+
+.fa-square-plus {
+    font-size: 3rem;
+    margin-right: 10px;
+}
+
+/* Profile Box */
+.profile-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 15px;
+}
+
+.profile-box .flex-start {
+    margin: 10px 0;
+}
+
+.profile-box .ico {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+hr {
+    opacity: 0.5;
+    margin-right: 15px;
+}
+
+.profile-box .ico.avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #808080;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-box .text-menu {
+    color: var(--light-primary);
+    font-weight: 700;
+}
+
+/* PLAYBAR */
+
+/*Song Box*/
+.song .cover {
+    width: 45px;
+    margin: 15px;
+}
+
+.song .title {
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.song .subtitle {
+    font-size: 0.7rem;
+    margin-right: 15px;
+}
+
+.song .ico i{
+    color: var(--dark-text);
+    padding-left: 10px;
+}
+
+/* Media Bar FIXARE*/
+.media-top {
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.media-bar .ico i {
+    padding: 10px;
+    font-size: 1.3rem;
+}
+
+.media-bottom {
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.6rem;
+}
+
+
+/*Settings Box*/
+
+.settings .ico i {
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+/*********************
+    MEDIA QUERY
+**********************/
+
+@media screen and ( max-width: 992px) {
+    .col {
+        width: calc(100% / 4);
+    }
+}
+
+@media screen and ( max-width: 768px) {
+    .col {
+        width: calc(100% / 2);
+    }
 }
