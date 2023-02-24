@@ -19,6 +19,7 @@
                 <div class="aside-top">
                     <!-- LOGO -->
                     <img class="logo" src="./img/logo.svg" alt="Logo">
+                    <img class= "logo-small" src="./img/logo-small.svg" alt="Logo">
                     <!-- MENU -->
                     <ul class="aside-menu">
                         <li class="flex-start">
@@ -43,24 +44,26 @@
                         </li>           
                     </ul>
                     <!-- PLAYLIST -->
-                    <h3>Playlist</h3>
-                    <div class="btn-create flex-start"><div class="ico"><i class="fa-solid fa-square-plus"></i></div><a href="#">Crea Playlist</a></div>
-                    <ul class="playlist-ul">
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                        <li><a href="#">Nome Playlist</a></li>
-                    </ul>
-                </div>
+                    <div id="playlist-cont">
+                        <h3>Playlist</h3>
+                        <div class="btn-create flex-start"><div class="ico"><i class="fa-solid fa-square-plus"></i></div><a href="#">Crea Playlist</a></div>
+                        <ul class="playlist-ul">
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                            <li><a href="#">Nome Playlist</a></li>
+                        </ul>
+                    </div>
+                </div>   
                 <!-- PROFILE -->
                 <div class="aside-bottom">
                     <div class="profile-box">
                         <div class="flex-start">
                             <div class="ico"><img src="./img/download.svg" alt="download"></div>
-                            <a href="#">Installa app</a>
+                            <a class="text-menu" href="#">Installa app</a>
                         </div>
                         <hr>
                         <div class="flex-start">
@@ -250,8 +253,8 @@
                     <a class="subtitle" href="#">Brano Nome</a>
                 </div>
                 <div class="ico">
-                    <i class="fa-regular fa-heart"></i>
-                    <i class="fa-regular fa-folder"></i>
+                    <a href="#"><i class="fa-regular fa-heart"></i></a>
+                    <a href="#"><i class="fa-regular fa-folder"></i></a>
                 </div>
             </div>
 
@@ -274,12 +277,11 @@
             </div>
 
             <div class="settings flex-between">
-                <div class="ico">
+                <div class="ico flex-between">
                     <i class="fa-solid fa-bars"></i>
                     <i class="fa-solid fa-display"></i>
                     <i class="fa-solid fa-volume-high"></i>
                 </div>
-                <!-- INSERIRE BARRA -->
                 <input type="range" min="1" max="100" value="15" class="volume slider">
             </div>
         </div>
